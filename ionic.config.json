@@ -1,0 +1,7 @@
+{
+  "name": "bldrApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
