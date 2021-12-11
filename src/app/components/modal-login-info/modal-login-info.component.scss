@@ -1,0 +1,22 @@
+ion-content {
+    --padding-top: 5%;
+    display: flex;
+    align-items: center;
+    --padding-start: 10%;
+    --padding-end: 10%;
+    --ion-background-color: #ffff;
+}
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+	}
+	
+	.text-dark{
+		color: black;
+		text-align: justify;
+		text-justify: inter-word;
+	}
+	.ion-title1{
+		padding-top: 10px;
+		font-size: 1em;
+	  }

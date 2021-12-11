@@ -1,0 +1,65 @@
+<ion-header translucent class="ion-padding  ion-no-border" mode="ios">
+  <ion-toolbar color="light">
+    <ion-buttons collapse="true" slot="start">
+      <ion-back-button [text]="'Cancelar'" [icon]="undefined" defaultHref="dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="dark">Reportar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content scroll-x fullscreen>
+
+  <form [formGroup]="reporte">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="11">
+
+          <h6 class="text-dark">Fecha inicio de Sintomas.</h6>
+          <ion-item color="tertiary">
+            <ion-icon name="calendar-number-outline"></ion-icon>
+            <ion-datetime class="ion-padding" color="danger" (ionCancel)="change($event)" (ionChange)="change($event)"
+              formControlName="fechaSintomas" display-format="DD.MM.YYYY"></ion-datetime>
+          </ion-item>
+
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="11">
+          <h6 class="text-dark">Fecha de prueba.</h6>
+          <ion-item color="tertiary">
+            <ion-icon name="calendar-number-outline"></ion-icon>
+            <ion-datetime class="ion-padding" color="danger" (ionCancel)="change($event)" (ionChange)="change($event)"
+              formControlName="fechaPrueba" display-format="DD.MM.YYYY"></ion-datetime>
+          </ion-item>      
+        </ion-col>
+      </ion-row>
+    
+      <ion-row class="ion-justify-content-center"> 
+        <ion-col size="11">
+          <h6 class="text-dark">Si desea, puede agregar detalles.</h6>
+          <ion-item>
+            <ion-textarea formControlName = detalles></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="11">
+            <ion-button (click)="reportarContagio()" color="danger" type="submit" expand="block" [disabled]="!reporte.valid || !reporte.touched">
+              Reportar
+              <ion-icon *ngIf="reporte.valid" slot="end" name="arrow-forward-circle-outline"></ion-icon>
+            </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+    
+
+
+    
+  </form>
+
+
+</ion-content>

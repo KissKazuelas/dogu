@@ -1,0 +1,83 @@
+<ion-header collapse translucent="true"  class="ion-padding-horizontal ion-padding-top ion-no-border" mode="ios">
+  <ion-toolbar color="light">
+    <ion-title size="large" slot="start" color="dark">Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content scroll-x fullscreen>
+      <ion-grid>
+        <ion-row class="ion-no-margin">
+          <ion-col class="nopad" size="12">
+            <ion-card mode="ios" color="light">
+              <ion-item>
+                <ion-icon name="pin"></ion-icon>
+                <ion-label color="primary">Ubicacion Actual</ion-label>
+                <ion-button *ngIf="dataLocalService._actualPlace" (click)="salir()" fill="outline">Salir</ion-button>
+              </ion-item>
+    
+              <ion-card-content class="center-f">
+               <ion-text>
+                {{lugar}}
+               </ion-text>
+              
+              </ion-card-content>
+              
+               
+
+            </ion-card>
+          </ion-col>
+        </ion-row>
+       
+        <ion-row class="ion-no-margin">
+              <ion-col size="12">
+                <ion-card mode="ios" color="light">
+                  <ion-item>
+                    <ion-icon name="warning-outline"></ion-icon>
+                    <ion-label color="primary">Riesgo Actual</ion-label>
+                  </ion-item>
+        
+                  <ion-card-content class="center-f chart">
+                    <rg-gauge-chart *ngIf="dataLocalService.drawChart else unkowRisk "
+                    [canvasWidth]="canvasWidth"
+                    [needleValue]="dataLocalService._risk"
+                    [centralLabel]="dataLocalService._labelRisk"
+                    [options]="dataLocalService.options"
+                   ></rg-gauge-chart>
+                   <ng-template #unkowRisk>
+                     <ion-text >
+                        No es posible generar este dato.
+                     </ion-text>
+                   </ng-template>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+    
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+    
+            <ion-card mode="ios" color="light" routerLink='/historial'>
+              <ion-card-header >
+                <ion-card-subtitle>Ver historial   <ion-icon name="arrow-forward-outline" ></ion-icon></ion-card-subtitle>
+              </ion-card-header>
+            
+            </ion-card> 
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+    
+            <ion-card (click)="reportarContagio()" class="emergency" mode="ios" color="light">
+              <ion-card-header >
+                <ion-card-subtitle>Reportar contagio <ion-icon size="medium" name="warning-outline"></ion-icon></ion-card-subtitle>
+              </ion-card-header>
+            
+            </ion-card> 
+          </ion-col>
+        </ion-row>
+    
+      </ion-grid>
+
+
+</ion-content>

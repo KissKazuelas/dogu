@@ -1,0 +1,36 @@
+ion-content {
+    --padding-top: 5%;
+    display: flex;
+    align-items: center;
+    --padding-start: 10%;
+    --padding-end: 10%;
+    --ion-background-color: #ffff;
+}
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    }
+
+.input-group{
+    margin-bottom: 25px;
+}
+
+ion-item{
+    --border: var(--ion-color-primary);
+    --border-radius: 5px;
+    --border-color: blue;
+    --color: white !important;
+}
+
+.text-dark{
+    color: black;
+}
+
+ion-datetime{
+    
+    border-bottom: red 15px !important;
+}
+
+ion-icon {
+    font-size: 30px;
+  }

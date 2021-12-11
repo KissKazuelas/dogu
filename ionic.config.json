@@ -1,5 +1,5 @@
 {
-  "name": "bldrApp",
+  "name": "DoguApp",
   "integrations": {
     "capacitor": {}
   },

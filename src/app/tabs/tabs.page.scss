@@ -1,1 +1,10 @@
 
+ion-tab-bar.my-custom-tab-bar {
+
+	width: 100%;
+	--background: rgb(255, 255, 255);
+	--border: none;
+	ion-tab-button {
+	  --background: transparent;
+	}
+  }

@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button (click)="presentModal()">
+        <ion-icon  name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <img src="../../../assets/logos/logo.png">
+
+  <form (ngSubmit)="login()" [formGroup]="credentials">
+    <div class="input-group">
+      <!-- <ion-item>
+        <ion-input type="date" formControlName="date"></ion-input>
+      </ion-item> -->
+      <h6 class="text-dark">Fecha de nacimiento.</h6>
+      <ion-item color="tertiary">
+        <ion-icon  name="calendar-number-outline"></ion-icon>
+        <ion-datetime class="ion-padding" color="danger" (ionCancel)="change($event)"  (ionChange)="change($event)" formControlName="date" display-format="DD.MM.YYYY"></ion-datetime>
+      </ion-item>
+      
+     
+    </div>
+ 
+    <ion-button type="submit" expand="block" [disabled]="!credentials.valid">
+      Ingresar
+      <ion-icon *ngIf="credentials.valid" slot="end" name="arrow-forward-circle-outline"></ion-icon>
+    </ion-button>
+
+  </form>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar mode='ios'>
+    <ion-title class="text-dark">Dev by ArticDev {{'{}'}} </ion-title>
+  </ion-toolbar>
+</ion-footer>

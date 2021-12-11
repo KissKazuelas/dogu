@@ -1,0 +1,35 @@
+<ion-header translucent class="ion-padding ion-no-border" mode="ios">
+  <ion-toolbar color="light">
+    <ion-buttons collapse="true" slot="start">
+      <ion-back-button [text]="'Cancelar'" [icon]="undefined" defaultHref="tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="dark">Historial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content scroll-x fullscreen>
+   <ion-grid>
+    <ion-row class="ion-no-margin">
+      <ion-col *ngFor="let item of dataLocalService.visitPlaces" class="nopad" size="12">
+        <ion-card mode="ios" color="light">
+         <ion-card-content class="center-f">
+          <h1>
+            Lugar: {{ item.place.descripcion}}  
+          </h1><br>
+          <h3>
+            Centro: {{item.place.centro}}
+          </h3><br>
+          <pre>
+            {{item.fecha}}
+          </pre>
+        </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
+
+
+</ion-content>
